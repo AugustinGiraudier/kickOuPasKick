@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jeuCompteur.css">
+    <link rel="icon" type="image/png" href="ressources/logo.png" />
+    <link href="https://fonts.cdnfonts.com/css/berlin-sans-fb-demi" rel="stylesheet">
+    <script src="js/jeuCompteur.js"></script>
+    <script src="js/tools.js"></script>
+    <title>Kick ou pas Kick</title>
+</head>
+
+
+<body onload="PageLoaded()">
+
+<!--  LOGO  -->
+
+<div id="logo_page">
+    <img id="img_logo" onclick="ReloadPage()" class="grow" img src="ressources/logo.png" alt="">
+</div>
+
+<!--  Page Infos  -->
+
+<div id="first_page">
+    <div class="center-col">
+        <p>Sur combien on joue ?</p>
+        <input class="input_nombre" type="number" name="inp_nb_chance" id="inp_nb_chance">
+        <p id="err-1" class="msg-error hide">Ce chiffre doit être suppérieur à 0</p>
+    </div>
+
+    <div class="center-col">
+        <p>Ton nombre ?</p>
+        <input class="input_nombre" type="number" name="inp_nb" id="inp_nb">
+        <p id="err-2" class="msg-error hide">Ce chiffre doit être suppérieur à 0 et inférieur ou égal au max</p>
+    </div>
+
+    <div class="sep"></div>
+
+    <div class="center-col">
+        <input onclick="StartGame()" type="button" class="input_button grow"  value="Voyons ça !">
+    </div>
+</div>
+
+
+<!--  Page jeu  -->
+
+<div id="second_page" class="hide">
+
+    <div id="game_panel">
+        <!-- cpt1 -->
+        <div class="cpt_container">
+            <p class="title">Ton Nombre</p>
+            <div class="cpt">
+                <p id='cpt1' class="num_cpt">37</p>
+            </div>
+        </div>
+        <!-- cpt2 -->
+        <div class="cpt_container">
+            <p id="titre_cpt2" class="title">Tirage</p>
+            <div class="cpt" id="fond_cpt2">
+                <p id='cpt2' class="num_cpt">1</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="sep"></div>
+
+</div>
+
+<!-- Footer -->
+
+<footer>
+
+    <div class="sep"></div>
+    <div id="footer_line"></div>
+    <div id="footer_content">
+        <p id="footer_text"></p>
+        <script>
+            document.getElementById("footer_text").innerHTML = "Copyright Augustin Giraudier - " + new Date().getFullYear();
+        </script>
+    </div>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jeuCartes.css">
+    <link rel="icon" type="image/png" href="ressources/logo.png" />
+    <link href="https://fonts.cdnfonts.com/css/berlin-sans-fb-demi" rel="stylesheet">
+    <script src="js/jeuCartes.js"></script>
+    <script src="js/tools.js"></script>
+    <title>Kick ou pas Kick</title>
+</head>
+
+<body>
+
+
+    <!--  LOGO  -->
+
+    <div id="logo_page">
+        <img id="img_logo" onclick="ReloadPage()" class="grow" img src="ressources/logo.png" alt="">
+    </div>
+
+    <!--  Page 1 -->
+
+    <div id="page_1">
+
+        <div class="center-col">
+            <p>Choisissez votre nombre de carte</p>
+        </div>
+
+        <div id="choosePanel">
+
+            <input class="input_button grow" onclick="startGame(2)" type="button" value="2">
+            <input class="input_button grow" onclick="startGame(3)" type="button" value="3">
+            <input class="input_button grow" onclick="startGame(4)" type="button" value="4">
+            <input class="input_button grow" onclick="startGame(5)" type="button" value="5">
+
+        </div>
+
+    </div>
+
+    <!--  Page 2 -->
+
+    <div id="page_2" class="hide">
+
+
+        <div id="cards"></div>
+
+    </div>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="sep"></div>
+        <div id="footer_line"></div>
+        <div id="footer_content">
+            <p id="footer_text"></p>
+            <script>
+                document.getElementById("footer_text").innerHTML = "Copyright Augustin Giraudier - " + new Date().getFullYear();
+            </script>
+        </div>
+
+    </footer>
+
+
+</body>
+</html>

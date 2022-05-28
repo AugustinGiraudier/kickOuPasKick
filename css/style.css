@@ -30,6 +30,11 @@ p, .input_button, .input_nombre{
     align-items: center;
     flex-direction: column;
 }
+.center-row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
 .sep{
     margin-top: 100px;
 }
@@ -41,7 +46,7 @@ p, .input_button, .input_nombre{
     height: 40px;
     width: 200px;
 }
-.input_button:hover{
+.input_button:hover, .pointable:hover{
     cursor:pointer;
 }
 .grow { 
@@ -52,29 +57,6 @@ p, .input_button, .input_nombre{
 }
 .hide{
     display : none;
-}
-#game_panel{
-    padding: 0px 15%;
-    display: flex;
-    justify-content: space-around;
-}
-.cpt_container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.cpt{
-    background-color: white;
-    border-radius: 10px;
-    height: 110px;
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center ;
-}
-.num_cpt{
-    font-size: 4em;
 }
 #footer_line{
     height: 2px;
