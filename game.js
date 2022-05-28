@@ -82,6 +82,8 @@ function sleep(ms) {
 
 function FinTirage(){
     document.getElementById("cpt2").style.color = "white";
+    document.getElementById("img_logo").style.width = "500px";
+    document.getElementById("img_logo").style.height = "auto";
     // perdu
     if(NumCpt2 == NbChoisi){
         document.getElementById("fond_cpt2").style.backgroundColor = "#E32819";
@@ -92,8 +94,7 @@ function FinTirage(){
         document.getElementById("fond_cpt2").style.backgroundColor = "#286328";
         document.getElementById("img_logo").src = "./ressources/pasKick.png";
     }
-    document.getElementById("img_logo").style.width = "500px";
-    document.getElementById("img_logo").style.height = "auto";
+
 }
 
 function getRandom(min, max) {
