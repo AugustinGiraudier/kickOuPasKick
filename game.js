@@ -34,6 +34,7 @@ function StartGame(){
         NumCpt2 = getRandom(0, NbChance);   
         cpt2.innerHTML = NumCpt2;
         document.getElementById("cpt1").innerHTML = NbChoisi;
+        document.getElementById("titre_cpt2").innerHTML = "Tirage entre 0 et " + (NbChance-1); 
         // cache la premiere page : 
         document.getElementById("first_page").classList.add("hide");
         // fait apparaitre la deuxieme : 
