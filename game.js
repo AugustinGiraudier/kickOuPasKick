@@ -19,34 +19,42 @@ var cpt2;
 
 
 function StartGame(){
-    let nbrChance = parseInt(document.getElementById("inp_nb_chance").value);
-    let nbrChoosen = parseInt(document.getElementById("inp_nb").value);
 
-    if(verifNbr(nbrChance) && verifNbr(nbrChoosen)){
-        NbChoisi = nbrChoosen;
-        NbChance = nbrChance;
-        if(NbChoisi > NbChance){
-            console.log("Erreur : nombre choisi plus grand que le nombre de chances...")
-            return;
-        }
-        //prepare l'affichage :
-        cpt2 = document.getElementById("cpt2");
-        NumCpt2 = getRandom(0, NbChance);   
-        cpt2.innerHTML = NumCpt2;
-        document.getElementById("cpt1").innerHTML = NbChoisi;
-        document.getElementById("titre_cpt2").innerHTML = "Tirage entre 1 et " + NbChance; 
-        // cache la premiere page : 
-        document.getElementById("first_page").classList.add("hide");
-        // fait apparaitre la deuxieme : 
-        document.getElementById("second_page").classList.remove("hide");
-        // retour au haut de page
-        scroll(0,0)
-        // lancer le tirage :
-        tirage(getRandom(30,50));
+    ResetErrorMessages();
 
+
+    NbChance = parseInt(document.getElementById("inp_nb_chance").value);
+    NbChoisi = parseInt(document.getElementById("inp_nb").value);
+
+    // Gestion d'erreurs :
+    if(!verifNbr(NbChance)){
+        document.getElementById("err-1").classList.remove('hide');
         return;
     }
-    console.log("Erreur : nombres d'entrée incorrects...");
+    if(!verifNbr(NbChoisi)){
+        document.getElementById("err-2").classList.remove('hide');
+        return;
+    }
+    if(NbChoisi > NbChance){
+        document.getElementById("err-2").classList.remove('hide');
+        return;
+    }
+
+
+    //prepare l'affichage :
+    cpt2 = document.getElementById("cpt2");
+    NumCpt2 = getRandom(0, NbChance);   
+    cpt2.innerHTML = NumCpt2;
+    document.getElementById("cpt1").innerHTML = NbChoisi;
+    document.getElementById("titre_cpt2").innerHTML = "Tirage entre 1 et " + NbChance; 
+    // cache la premiere page : 
+    document.getElementById("first_page").classList.add("hide");
+    // fait apparaitre la deuxieme : 
+    document.getElementById("second_page").classList.remove("hide");
+    // retour au haut de page
+    scroll(0,0)
+    // lancer le tirage :
+    tirage(getRandom(30,50));
 }
 
 function verifNbr(nombre){
@@ -100,4 +108,11 @@ function FinTirage(){
 
 function getRandom(min, max) {
     return parseInt(Math.random() * (max - min) + min);
+}
+
+function ResetErrorMessages(){
+    if(!document.getElementById("err-1").classList.contains('hide'))
+        document.getElementById("err-1").classList.add('hide');
+    if(!document.getElementById("err-2").classList.contains('hide'))
+        document.getElementById("err-2").classList.add('hide');
 }
