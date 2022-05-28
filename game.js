@@ -38,6 +38,8 @@ function StartGame(){
         document.getElementById("first_page").classList.add("hide");
         // fait apparaitre la deuxieme : 
         document.getElementById("second_page").classList.remove("hide");
+        // retour au haut de page
+        scroll(0,0)
         // lancer le tirage :
         tirage(getRandom(30,50));
 
