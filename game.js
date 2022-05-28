@@ -31,7 +31,7 @@ function StartGame(){
         }
         //prepare l'affichage :
         cpt2 = document.getElementById("cpt2");
-        NumCpt2 = getRandom(0, NbChance);
+        NumCpt2 = getRandom(0, NbChance);   
         cpt2.innerHTML = NumCpt2;
         document.getElementById("cpt1").innerHTML = NbChoisi;
         // cache la premiere page : 
