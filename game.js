@@ -14,7 +14,7 @@ var SleepTiming3 = 500;
 var NbChoisi = -1;
 var NbChance = -1;
 
-var NumCpt2 = 0;
+var NumCpt2 = 1;
 var cpt2;
 
 
@@ -25,7 +25,7 @@ function StartGame(){
     if(verifNbr(nbrChance) && verifNbr(nbrChoosen)){
         NbChoisi = nbrChoosen;
         NbChance = nbrChance;
-        if(NbChoisi > NbChance-1){
+        if(NbChoisi > NbChance){
             console.log("Erreur : nombre choisi plus grand que le nombre de chances...")
             return;
         }
@@ -34,7 +34,7 @@ function StartGame(){
         NumCpt2 = getRandom(0, NbChance);   
         cpt2.innerHTML = NumCpt2;
         document.getElementById("cpt1").innerHTML = NbChoisi;
-        document.getElementById("titre_cpt2").innerHTML = "Tirage entre 0 et " + (NbChance-1); 
+        document.getElementById("titre_cpt2").innerHTML = "Tirage entre 1 et " + NbChance; 
         // cache la premiere page : 
         document.getElementById("first_page").classList.add("hide");
         // fait apparaitre la deuxieme : 
@@ -50,7 +50,7 @@ function StartGame(){
 }
 
 function verifNbr(nombre){
-    if(isNaN(nombre) || nombre < 0)
+    if(isNaN(nombre) || nombre < 1)
         return false;
     return true;
 }
@@ -72,8 +72,8 @@ async function tirage(nb){
 }
 
 function IncrementCpt(){
-    if(NumCpt2 == NbChance-1)
-        NumCpt2 = 0;
+    if(NumCpt2 == NbChance)
+        NumCpt2 = 1;
     else
         NumCpt2++;
     cpt2.innerHTML = NumCpt2;
