@@ -3,6 +3,8 @@ function pageLoaded(){
 }
 
 
+var angle = getRandom(0,360);
+
 function createChart(pourcentage){
 
     const color = d3.scaleOrdinal(['#E32819', '#286328']);
@@ -33,6 +35,7 @@ function onRangeChange(){
 
 function getSettings(){
     createChart(document.querySelector("#range").value);
+    document.querySelector("#roue").style.transform="rotateZ("+ angle +"deg)";
 
     document.querySelector("#titreRoue").innerHTML = document.querySelector("#range").value + "% de kick";
 
@@ -45,8 +48,7 @@ function StartGame(){
     document.querySelector("#btn-start").classList.add("hide");
     const PourcentKick = document.querySelector("#range").value;
     var roue = document.querySelector("#roue");
- 
-    var angle=0;
+
     var angleChange = getRandom(50,91); // vitesse de départ (90 - 50)
 
     const TimeBetweenUpdate = 25;
