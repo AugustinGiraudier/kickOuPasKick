@@ -61,10 +61,6 @@ function addCardTo(pannelId, kick){
 
 }
 
-function getRandom(min, max) {
-    return parseInt(Math.random() * (max - min) + min);
-}
-
 function CardClick(div){
     if(!EndGame)
         div.classList.add("carte-return");

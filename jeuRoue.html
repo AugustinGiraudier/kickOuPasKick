@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jeuRoue.css">
+    <link rel="icon" type="image/png" href="ressources/logo.png" />
+    <link href="https://fonts.cdnfonts.com/css/berlin-sans-fb-demi" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="js/tools.js"></script>
+    <script src="js/jeuRoue.js"></script>
+    <title>Kick ou pas Kick</title>
+</head>
+
+
+<body onload="pageLoaded()">
+
+<!--  LOGO  -->
+
+<div id="logo_page">
+    <img id="img_logo" onclick="ReloadPage()" class="grow" img src="ressources/logo.png" alt="">
+</div>
+
+
+<!--  Page1  -->
+
+
+<div id="page_1">
+
+    <div class="center-col">
+        <p>Pourcentage de chance de kick</p>
+    </div>
+
+    <div id="range-panel">
+        <input type="range" value="50" min="0" max="100" id="range" oninput="onRangeChange()"/>
+        <p id="cpt">50%</p>
+    </div>
+
+    <div class="center-col">
+        <input onclick="getSettings()" class="input_button grow" type="button" value="Place au tirage !">
+    </div>
+
+</div>
+
+
+<!--  Page2  -->
+
+<div id="page_2" class="hide">
+
+    <div id="btn-start" class="center-row">
+        <input onclick="StartGame()" class="input_button grow" type="button" value="Lancer la roue">
+    </div>
+
+    <div class="center-row">
+        <p id="titreRoue"></p>
+    </div>
+
+    <div id="roue-panel">
+        <svg id="roue"></svg>
+        <img id="fleche" src="./ressources/flecheBlanche.png" alt="">
+    </div>
+
+</div>
+
+
+
+
+<!-- Footer -->
+
+<footer>
+
+    <div class="sep"></div>
+    <div id="footer_line"></div>
+    <div id="footer_content">
+        <p id="footer_text"></p>
+        <script>
+            document.getElementById("footer_text").innerHTML = "Copyright Augustin Giraudier - " + new Date().getFullYear();
+        </script>
+    </div>
+
+</footer>
+
+</body>
+</html>

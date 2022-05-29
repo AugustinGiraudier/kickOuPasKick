@@ -1,0 +1,30 @@
+svg{
+    width: 400px;
+    height: 400px;
+}
+#range{
+    width: 500px;
+    height: auto;
+}
+#cpt{
+    margin-left: 100px;
+    color: #E32819;
+    font-size: 2em;
+}
+#range-panel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#roue-panel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#fleche{
+    margin-left: -2px;
+    z-index: 1;
+}
+.invisible{
+    visibility: hidden;
+}

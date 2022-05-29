@@ -100,10 +100,6 @@ function FinTirage(){
 
 }
 
-function getRandom(min, max) {
-    return parseInt(Math.random() * (max - min) + min);
-}
-
 function ResetErrorMessages(){
     if(!document.getElementById("err-1").classList.contains('hide'))
         document.getElementById("err-1").classList.add('hide');
